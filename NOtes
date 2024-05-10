@@ -1,0 +1,358 @@
+Framework -
+
+it gives us organized structure
+Proper folder heirarchy
+single execution point
+separate place for different code
+
+
+We use maven as build management tool
+
+group id - company name
+artifact id - project name
+
+main folder - for development code
+test folder - for testing code
+        -- java - for coding part
+        -- resources for non-coding part
+
+pom.xml -- to add dependency
+it is a configuration file which is considered as a backbone of the maven project
+
+Cucumber -- It supports behavioral driven development approach wherein we write our test cases specification in
+            gherkin language (plain english).
+
+         Keywords: features, background, scenario,
+
+         Given - pre condition - Given user is navigated to the HRMS application
+         When - Actions -- When the user enters username and password
+         And - -- this tag can come with every other keyword -- And user click on login button
+         Then -- expected output - result - Then user should be able to see dashboard page
+
+
+Recap :
+
+Maven - build management tool
+
+test - here we write code for testing
+    -- java - coding stuff
+    -- resources - non coding stuff
+
+         Given - pre condition - Given user is navigated to the HRMS application
+         When - Actions -- When the user enters username and password
+         And - -- this tag can come with every other keyword -- And user click on login button
+         Then -- expected output - result - Then user should be able to see dashboard page
+         Feature -- .feature -- to write scenario we use feature file
+         scenario --
+
+User story 12345 - Admin should be able to search an employee in HRMS application
+
+Acceptance criteria:
+    1 search by id
+    2 search by name
+
+23638000
+XYZT
+
+1.
+Given user opens browser and navigated to HRMS
+And user is logged in  as an admin
+And user is on employee list page
+When user enters valid employee id
+And user clicks on search button
+Then user see employee in the employee table
+
+2.
+Given user opens browser and navigated to HRMS
+And user is logged in  as an admin
+And user is on employee list page
+When user enters firstname and lastname
+And user clicks on search button
+Then user see employee in the employee table
+
+
+
+Login feature
+
+
+Class 3 -
+Recap -
+
+To increase transparency/ to reduce communication gap
+supports BDD (Gherkin) language - easy to understand for non technical people also
+focuses on end user
+
+Feature file - to write test scenarios
+
+keywords
+given - pre condition
+when - perform actions
+and - supporting tag
+then - result
+
+
+Step definition - to implement the code for the steps written in feature file, we use step definitions
+
+Runner class -
+
+features,
+glue,
+dryrun
+monochrome
+tags
+plugins
+strict
+
+background - it applicable only for one feature file, here we add common steps among all the scenarios
+
+
+class 4:
+
+Recap -
+
+Runner class - to configure the execution flow of our test cases
+
+@runwith - from junit
+@cucumberoptions - to provide configurations
+
+features - path of my feature files
+glue - path of the step definitions for feature files
+dryRun - if it is set to true, if stops actual execution and provides the missing steps snippet
+monochrome - it removes unreadable character and cleans the console
+tags - for grouping
+plugins - for report generation and other purpose
+
+background - to put common steps among all the scenarios from single feature file, we use background
+
+Hooks - We use hooks to provide pre conditions and post conditions
+we should provide hooks under the package where my steps are available
+
+Hooks vs Background -
+
+Background - it is applicable to one feature file
+hooks - it is application to all the feature files
+
+
+Class 5 -
+
+Hooks -
+
+before and after = pre condition and post condition
+Passing the data
+passing the data directly from feature file - scenario
+passing the data from @examples table from scenario outline to achieve ddt
+from data table -
+
+data table vs examples
+data table is applicable to just a single step
+examples table is applicable to complete scenario
+
+Class 6 -
+
+this framework supports BDD and DDT.
+
+
+Class 7 -
+
+recap -
+
+Page object model design pattern -
+it allows us to create classes according to the pages available in the application
+we place all locators and functions related to this particular page in respective class
+
+
+
+
+
+Class 8 -
+
+recap -
+using POM to write functions in respective classes
+
+use common methods to write common functions in it such as
+sendtext
+click
+
+
+to execute from cmd/ terminal -
+open the cmd/terminal in the project root where pom.xml is availablen and then execute below commands
+
+mvn clean
+mvn test
+mvn clean test
+mvn test -Dcucumber.filter.tags="@tagname"
+
+
+Review 2 :
+
+Feature file: we write scenario is feature file
+
+Feature -  the name of feature file/ User story
+scenario - the name of the test case
+given - pre condition
+when - we use it to perform some actions
+and - supporting keyword
+then - results
+scenario outline - to pass the data from examples table, we use scenario outline instead of scenario
+examples - it is a table where we provide data in key and value format
+background - all the initial common steps across all the scenarios in a feature file will be written here
+hooks (before and after) - pre and post condition throughout our project
+
+
+steps class - all the step definitions for the feature file will be written here
+Runner class - single execution point for all the features
+
+Maven - build management tool
+
+main - for developers
+test - for testing related code
+pom.xml file - to add all dependencies
+
+POM - Page object model design pattern
+ According to this pattern, every single page in the application should have a respective class in the project
+ We add all the locators and functions related to the specific page in its class
+
+class 5 -
+JAVA REST ASSURED API -
+
+Rest web service allows data to be sent in JSON object
+Json object consists of key and value pairs
+
+REST ASSURED is DSL (domain specific language)
+this is a java based library we use to automate REST Api's
+
+Rest Assured follows behavioral driven development (BDD) approach
+
+Given - preparing the request
+When - making the request/making the call/hitting the endpoint
+Then - response - Assertions/verification
+
+
+To write sample test - get one employee
+
+Things needed:
+base uri - url
+end point
+headers - token, content type
+query parameter
+
+
+Class 6 -
+
+recap -
+
+sample test -
+getting an employee details using api
+
+given
+BaseURI - base url
+headers - content type, authorization
+query parameter
+
+when keyword we use to hit the end point
+
+then - for verification and validation
+
+@Test - junit
+
+Hamcrest Matchers-
+
+Class contains methods to perform assertions
+
+JsonPath vs jsonPath()
+
+JsonPath is class -
+jsonPath() is a method that belongs to JsonPath class
+
+Class 7 -
+
+Recap -
+
+Create
+Retrieving
+Updating
+
+JsonPath - it is a class
+JsonPath() - Json
+
+
+BaseURI = Base URL
+
+given = prepare the request
+when = to hit the endpoint
+then = response/validation
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

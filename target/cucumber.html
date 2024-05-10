@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Cucumber</title>
+	<meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+	<style>
+.cucumber-react .cucumber-status--passed {
+  color: #2CB14A;
+}
+.cucumber-react .cucumber-status--skipped {
+  color: #00A0CC;
+}
+.cucumber-react .cucumber-status--pending {
+  color: #FFAD33;
+}
+.cucumber-react .cucumber-status--undefined {
+  color: #FFAD33;
+}
+.cucumber-react .cucumber-status--ambiguous {
+  color: #F4EBFD;
+}
+.cucumber-react .cucumber-status--failed {
+  color: #BB0000;
+}
+.cucumber-react .cucumber-status--unknown {
+  color: #B6BECB;
+}
+.cucumber-react h1, .cucumber-react h2, .cucumber-react h3 {
+  padding: 0;
+  margin: 0;
+}
+.cucumber-react a {
+  color: inherit;
+}
+.cucumber-react .gherkin-document-list {
+  font: 14px "Open Sans", sans-serif;
+  color: #161C24;
+  background: #fff;
+  overflow-x: hidden;
+}
+.cucumber-react .cucumber-title {
+  margin-top: 0.3em;
+  margin-bottom: 0;
+  display: inline-block;
+}
+.cucumber-react .cucumber-title__keyword {
+  font-weight: bold;
+}
+.cucumber-react .cucumber-title__text {
+  font-weight: normal;
+}
+.cucumber-react .cucumber-tags {
+  padding: 0;
+  margin-bottom: 0;
+}
+.cucumber-react .cucumber-tags .cucumber-tag {
+  display: inline;
+  list-style-type: none;
+  padding: 4px 8px 4px 8px;
+  margin-right: 6px;
+  background-color: #FFFFFF;
+  border-radius: 6px;
+}
+.cucumber-react .cucumber-feature__icon {
+  padding-top: 0.35em;
+  padding-right: 0.5em;
+}
+.cucumber-react .cucumber-description,
+.cucumber-react .cucumber-children {
+  margin-left: 1em;
+}
+.cucumber-react .cucumber-feature,
+.cucumber-react .cucumber-rule,
+.cucumber-react .cucumber-scenario,
+.cucumber-react .cucumber-background {
+  margin-bottom: 1em;
+}
+.cucumber-react .cucumber-steps {
+  list-style-type: none;
+  padding-left: 10px;
+}
+.cucumber-react .cucumber-steps .cucumber-step {
+  display: flex;
+}
+.cucumber-react .cucumber-steps .cucumber-step__status {
+  padding-top: 0.2em;
+  padding-right: 0.5em;
+}
+.cucumber-react .cucumber-steps .cucumber-step__content {
+  flex-grow: 1;
+}
+.cucumber-react .cucumber-steps .cucumber-step__keyword {
+  font-weight: bold;
+}
+.cucumber-react .cucumber-steps .cucumber-step__text {
+  font-weight: normal;
+}
+.cucumber-react .cucumber-steps .cucumber-step__param {
+  font-weight: normal;
+  font-style: italic;
+}
+.cucumber-react .cucumber-table {
+  border-collapse: collapse;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
+.cucumber-react .cucumber-table__header-cell {
+  border: 1px solid #4B5662;
+  padding: 0.3em;
+}
+.cucumber-react .cucumber-table__cell {
+  border: 1px solid #4B5662;
+  padding: 0.3em;
+}
+.cucumber-react .cucumber-table__cell__status {
+  padding: 0.5em 3px 3px 3px;
+}
+.cucumber-react .cucumber-table__cell__step {
+  flex-grow: 1;
+}
+.cucumber-react .cucumber-code {
+  padding: 0.25em;
+  background-color: #ebebeb;
+}
+.cucumber-react .cucumber-error {
+  padding: 0.5em;
+  margin: 0;
+  overflow: scroll;
+}
+.cucumber-react .cucumber-no-documents {
+  font: 14px "Open Sans", sans-serif;
+}
+.cucumber-react .cucumber-attachment {
+  background-color: #ebebeb;
+  padding: 0.5em;
+}
+.cucumber-react .cucumber-attachment__icon {
+  margin-right: 0.5em;
+}
+.cucumber-react .cucumber-attachment__image {
+  margin-top: 1em;
+}
+.cucumber-react .cucumber-anchor {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-top: 0.3em;
+}
+.cucumber-react .cucumber-anchor__link {
+  opacity: 0;
+  transition: all 0.35s ease-in-out;
+  position: absolute;
+  left: -20px;
+  display: flex;
+  align-items: center;
+}
+.cucumber-react .cucumber-anchor__icon {
+  margin-right: 0.5em;
+}
+.cucumber-react .cucumber-anchor:hover a {
+  opacity: 1;
+  width: max-content;
+  transition: all 0.35s ease-in-out;
+}
+.cucumber-react .cucumber-anchor > * {
+  height: 100%;
+  margin-top: 0px;
+}
+
+.cucumber-report-header {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  font: 11px "Open Sans", sans-serif;
+  margin-bottom: 1em;
+}
+.cucumber-report-header > * {
+  padding: 1em;
+}
+.cucumber-report-header .cucumber-status-filter {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+.cucumber-report-header .cucumber-status-filter table {
+  width: 100%;
+}
+.cucumber-report-header .cucumber-execution-data {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+.cucumber-report-header .cucumber-search-bar {
+  border-right: 0;
+}
+.cucumber-report-header .cucumber-search-bar form.cucumber-search-bar-search {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 9fr 1fr;
+}
+.cucumber-report-header .cucumber-search-bar form.cucumber-search-bar-search input {
+  padding: 0.4em;
+  border-radius: 0;
+}
+.cucumber-report-header .cucumber-search-bar form.cucumber-search-bar-search button {
+  height: 2.2em;
+  padding-left: 0.6em;
+  padding-right: 0.6em;
+}
+.cucumber-report-header .cucumber-search-bar p.help {
+  font-size: 80%;
+}
+.cucumber-report-header .cucumber-search-bar form.cucumber-search-bar-filter ul {
+  display: inline;
+}
+.cucumber-report-header .cucumber-search-bar form.cucumber-search-bar-filter ul li {
+  list-style-type: none;
+  display: inline-block;
+}
+.cucumber-report-header .cucumber-search-bar form.cucumber-search-bar-filter ul li input {
+  display: inline-block;
+  width: auto;
+  height: 0.6em;
+}
+.cucumber-report-header .cucumber-search-bar form.cucumber-search-bar-filter ul li label {
+  padding-right: 1em;
+}
+
+@media only screen and (min-width: 600px) {
+  .cucumber-report-header {
+    grid-template-columns: 1fr 1fr;
+  }
+  .cucumber-report-header .cucumber-status-filter {
+    border-right: 1px solid rgba(0, 0, 0, 0.1);
+  }
+  .cucumber-report-header .cucumber-search-bar {
+    grid-column: 1/-1;
+  }
+}
+@media only screen and (min-width: 992px) {
+  .cucumber-report-header {
+    grid-template-columns: 1fr 1fr 2fr;
+  }
+  .cucumber-report-header .cucumber-status-filter {
+    border-bottom: 0;
+  }
+  .cucumber-report-header .cucumber-execution-data {
+    border-right: 1px solid rgba(0, 0, 0, 0.1);
+    border-bottom: 0;
+  }
+  .cucumber-report-header .cucumber-search-bar {
+    grid-column: auto;
+  }
+}
+.accordion {
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 2px;
+}
+
+.accordion__item + .accordion__item {
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.accordion__button {
+    background-color: #f4f4f4;
+    color: #444;
+    cursor: pointer;
+    padding: 10px;
+    width: 100%;
+    text-align: left;
+    border: none;
+}
+
+.accordion__button:hover {
+    background-color: #ddd;
+}
+
+.accordion__button:before {
+    display: inline-block;
+    content: '';
+    height: 10px;
+    width: 10px;
+    margin-right: 12px;
+    border-bottom: 2px solid currentColor;
+    border-right: 2px solid currentColor;
+    transform: rotate(-45deg);
+}
+
+.accordion__button[aria-expanded='true']::before,
+.accordion__button[aria-selected='true']::before {
+    transform: rotate(45deg);
+}
+
+.accordion__panel {
+    padding: 20px;
+    animation: fadein 0.35s ease-in;
+}
+
+	</style>
+</head>
+<body>
+<div id="content">
+</div>
+<script>
+window.CUCUMBER_MESSAGES = [{"meta":{"protocolVersion":"13.2.1","implementation":{"name":"cucumber-jvm","version":"6.9.1"},"runtime":{"name":"Java HotSpot(TM) 64-Bit Server VM","version":"25.121-b13"},"os":{"name":"Windows 10"},"cpu":{"name":"amd64"}}},{"testRunStarted":{"timestamp":{"seconds":"1685209058","nanos":840000000}}},{"source":{"uri":"file:///C:/Users/sohel.abbasi/IdeaProjects/new/CucumberFrameworkBatch11/src/test/resources/features/APIWorkFlow.feature","data":"Feature: Syntax API workflow for HRMS\r\n\r\n  Background:\r\n    Given a JWT bearer token is generated\r\n\r\n  @WorkFlow1\r\n  Scenario: create an employee via API work flow\r\n    Given a request is prepared for creating an employee\r\n    When a POST call is made to create an employee\r\n    Then the status code for creating an employee is 201\r\n    And the employee created contains key \"Message\" and value \"Employee Created\"\r\n    And the employee id \"Employee.employee_id\" is stored as a global variable to be used for other calls\r\n\r\n  @WorkFlow1\r\n  Scenario: Retrieving recently created employee\r\n    Given a request is prepared to get the created employee using api call\r\n    When a GET call is made to retrieve the created employee\r\n    Then the status code for this employee is 200\r\n    And the employee data we get having ID \"employee.employee_id\" must match with the globally stored employee id\r\n    And the retrieved data at \"employee\" object matches the data used to create an employee with employee id \"employee.employee_id\"\r\n    |emp_firstname|emp_lastname|emp_middle_name|emp_gender|emp_birthday|emp_status|emp_job_title|\r\n    |Aymat        |tata        |MS             |Male      |1988-02-28  |Employee  |QA           |\r\n\r\n  @JsonWorkflow\r\n  Scenario: create an employee via API work flow using json\r\n    Given a request is prepared for creating an employee via json payload\r\n    When a POST call is made to create an employee\r\n    Then the status code for creating an employee is 201\r\n    And the employee created contains key \"Message\" and value \"Employee Created\"\r\n    And the employee id \"Employee.employee_id\" is stored as a global variable to be used for other calls\r\n\r\n  @Dyanmic\r\n  Scenario: Create highly dynamic scenario\r\n    Given a request is prepared for creating an employee with dynamic data \"Denis\", \"sergey\", \"mike\", \"M\", \"2018-12-12\", \"Employee\", \"QA\"\r\n    When a POST call is made to create an employee\r\n    Then the status code for creating an employee is 201\r\n    And the employee created contains key \"Message\" and value \"Employee Created\"\r\n    And the employee id \"Employee.employee_id\" is stored as a global variable to be used for other calls\r\n\r\n   @update\r\n   Scenario: Updating the employee using API call\r\n     Given a request is prepared for updating the existing employee details\r\n     When a PUT call is made to update the employee\r\n     Then the status code for creating an employee should be 200\r\n\r\n\r\n","mediaType":"text/x.cucumber.gherkin+plain"}},{"gherkinDocument":{"uri":"file:///C:/Users/sohel.abbasi/IdeaProjects/new/CucumberFrameworkBatch11/src/test/resources/features/APIWorkFlow.feature","feature":{"location":{"line":1,"column":1},"language":"en","keyword":"Feature","name":"Syntax API workflow for HRMS","children":[{"background":{"location":{"line":3,"column":3},"keyword":"Background","steps":[{"location":{"line":4,"column":5},"keyword":"Given ","text":"a JWT bearer token is generated","id":"bd72a15c-2cea-4852-956a-ff66a5cd0941"}],"id":"838d31d0-804a-4aba-8861-e152eced5c4e"}},{"scenario":{"location":{"line":7,"column":3},"tags":[{"location":{"line":6,"column":3},"name":"@WorkFlow1","id":"0fef4ce5-ebc8-44a1-adaa-b8f5e397fe75"}],"keyword":"Scenario","name":"create an employee via API work flow","steps":[{"location":{"line":8,"column":5},"keyword":"Given ","text":"a request is prepared for creating an employee","id":"f6819f6f-7653-4886-bb72-19af24271769"},{"location":{"line":9,"column":5},"keyword":"When ","text":"a POST call is made to create an employee","id":"3f862226-a614-46c1-82ab-361e81e720bd"},{"location":{"line":10,"column":5},"keyword":"Then ","text":"the status code for creating an employee is 201","id":"081dabe3-fad8-4a1a-9dee-5fc9435f94bb"},{"location":{"line":11,"column":5},"keyword":"And ","text":"the employee created contains key \"Message\" and value \"Employee Created\"","id":"dd2a1186-0abf-41ab-8d25-e3cff5c09b6e"},{"location":{"line":12,"column":5},"keyword":"And ","text":"the employee id \"Employee.employee_id\" is stored as a global variable to be used for other calls","id":"8e2eef06-8478-41d2-82f1-0f685409d4e8"}],"id":"7e69072f-a21f-43fd-9cf1-c68e762d1cca"}},{"scenario":{"location":{"line":15,"column":3},"tags":[{"location":{"line":14,"column":3},"name":"@WorkFlow1","id":"ce6d668e-84ac-475d-baee-f6a85d0dada4"}],"keyword":"Scenario","name":"Retrieving recently created employee","steps":[{"location":{"line":16,"column":5},"keyword":"Given ","text":"a request is prepared to get the created employee using api call","id":"c49077ee-f1bf-4bab-8b29-a6f597807ee7"},{"location":{"line":17,"column":5},"keyword":"When ","text":"a GET call is made to retrieve the created employee","id":"67dfc663-392a-48ee-859d-005edd8d0011"},{"location":{"line":18,"column":5},"keyword":"Then ","text":"the status code for this employee is 200","id":"ddb2bfa0-d6a6-4342-b76b-0f6331b21c6f"},{"location":{"line":19,"column":5},"keyword":"And ","text":"the employee data we get having ID \"employee.employee_id\" must match with the globally stored employee id","id":"adb5486c-c818-4f4c-b5ae-80c391f7ec40"},{"location":{"line":20,"column":5},"keyword":"And ","text":"the retrieved data at \"employee\" object matches the data used to create an employee with employee id \"employee.employee_id\"","dataTable":{"location":{"line":21,"column":5},"rows":[{"location":{"line":21,"column":5},"cells":[{"location":{"line":21,"column":6},"value":"emp_firstname"},{"location":{"line":21,"column":20},"value":"emp_lastname"},{"location":{"line":21,"column":33},"value":"emp_middle_name"},{"location":{"line":21,"column":49},"value":"emp_gender"},{"location":{"line":21,"column":60},"value":"emp_birthday"},{"location":{"line":21,"column":73},"value":"emp_status"},{"location":{"line":21,"column":84},"value":"emp_job_title"}],"id":"cf4048bc-469a-4cf8-8119-2dd247b27c36"},{"location":{"line":22,"column":5},"cells":[{"location":{"line":22,"column":6},"value":"Aymat"},{"location":{"line":22,"column":20},"value":"tata"},{"location":{"line":22,"column":33},"value":"MS"},{"location":{"line":22,"column":49},"value":"Male"},{"location":{"line":22,"column":60},"value":"1988-02-28"},{"location":{"line":22,"column":73},"value":"Employee"},{"location":{"line":22,"column":84},"value":"QA"}],"id":"de5186e8-9126-44dd-a9a4-0aa43f72a74d"}]},"id":"ec0a6f65-f72e-4c4c-8e53-75ec4a9f6cba"}],"id":"dd7ff3d8-7149-4287-ab57-51756c0f99dc"}},{"scenario":{"location":{"line":25,"column":3},"tags":[{"location":{"line":24,"column":3},"name":"@JsonWorkflow","id":"dc8f19e7-3f2e-451e-affa-9bc1465c69a2"}],"keyword":"Scenario","name":"create an employee via API work flow using json","steps":[{"location":{"line":26,"column":5},"keyword":"Given ","text":"a request is prepared for creating an employee via json payload","id":"8711efdf-96e8-41c6-a2ab-ab7e0c7a991b"},{"location":{"line":27,"column":5},"keyword":"When ","text":"a POST call is made to create an employee","id":"584ae429-554e-4b39-806a-967b29e52d81"},{"location":{"line":28,"column":5},"keyword":"Then ","text":"the status code for creating an employee is 201","id":"e7dfe3e4-e824-45a7-a530-dc8c544d0ba4"},{"location":{"line":29,"column":5},"keyword":"And ","text":"the employee created contains key \"Message\" and value \"Employee Created\"","id":"56a4859f-b945-459a-a29d-e78e5bf4cf83"},{"location":{"line":30,"column":5},"keyword":"And ","text":"the employee id \"Employee.employee_id\" is stored as a global variable to be used for other calls","id":"8c75e0c0-af9b-410f-b32a-c0885bbbe1e5"}],"id":"900530de-ff0b-4a40-89a7-fe3ca049bbb3"}},{"scenario":{"location":{"line":33,"column":3},"tags":[{"location":{"line":32,"column":3},"name":"@Dyanmic","id":"3bc6b544-ce9e-4701-867a-5e4c89cbac84"}],"keyword":"Scenario","name":"Create highly dynamic scenario","steps":[{"location":{"line":34,"column":5},"keyword":"Given ","text":"a request is prepared for creating an employee with dynamic data \"Denis\", \"sergey\", \"mike\", \"M\", \"2018-12-12\", \"Employee\", \"QA\"","id":"a0a60634-aa61-4daa-b1b6-3051fa8a7325"},{"location":{"line":35,"column":5},"keyword":"When ","text":"a POST call is made to create an employee","id":"3a636c0f-9b8b-4bcf-a067-08cafc39ea89"},{"location":{"line":36,"column":5},"keyword":"Then ","text":"the status code for creating an employee is 201","id":"0dd99c2f-9bb2-4fb7-84f0-67e77ff1666a"},{"location":{"line":37,"column":5},"keyword":"And ","text":"the employee created contains key \"Message\" and value \"Employee Created\"","id":"1638aeed-0749-4c1c-9e65-db85823af730"},{"location":{"line":38,"column":5},"keyword":"And ","text":"the employee id \"Employee.employee_id\" is stored as a global variable to be used for other calls","id":"9c7dd47b-f135-44a5-98d4-87f273fa92bf"}],"id":"116cb9ee-40b2-417c-80b5-fa5a865b2707"}},{"scenario":{"location":{"line":41,"column":4},"tags":[{"location":{"line":40,"column":4},"name":"@update","id":"4d97ede7-2fef-4df3-9911-daf94b92d03c"}],"keyword":"Scenario","name":"Updating the employee using API call","steps":[{"location":{"line":42,"column":6},"keyword":"Given ","text":"a request is prepared for updating the existing employee details","id":"628ba938-68d6-41af-8a9f-7f635dd6b2d4"},{"location":{"line":43,"column":6},"keyword":"When ","text":"a PUT call is made to update the employee","id":"e83c40ef-7a46-4564-83de-03bdb32591e8"},{"location":{"line":44,"column":6},"keyword":"Then ","text":"the status code for creating an employee should be 200","id":"10fe0162-6e00-47bc-b386-03bd6f1621a0"}],"id":"5bcd1f73-eecc-43d9-8cae-88f61000cede"}}]}}},{"pickle":{"id":"d80ff784-30e2-44cc-a8a5-cfc4eb21d4ea","uri":"file:///C:/Users/sohel.abbasi/IdeaProjects/new/CucumberFrameworkBatch11/src/test/resources/features/APIWorkFlow.feature","name":"create an employee via API work flow","language":"en","steps":[{"text":"a JWT bearer token is generated","id":"820d5356-805a-4e0f-8a19-de0ce07f1fa3","astNodeIds":["bd72a15c-2cea-4852-956a-ff66a5cd0941"]},{"text":"a request is prepared for creating an employee","id":"0dcce770-c0b9-4a89-87bc-bae68bb9e205","astNodeIds":["f6819f6f-7653-4886-bb72-19af24271769"]},{"text":"a POST call is made to create an employee","id":"1e123797-28ae-4a5c-a3cc-4406a45fd1eb","astNodeIds":["3f862226-a614-46c1-82ab-361e81e720bd"]},{"text":"the status code for creating an employee is 201","id":"06ab3496-568a-4527-95de-5b0090bcf3cb","astNodeIds":["081dabe3-fad8-4a1a-9dee-5fc9435f94bb"]},{"text":"the employee created contains key \"Message\" and value \"Employee Created\"","id":"19cca5c3-5684-4433-9ff0-199c36674d70","astNodeIds":["dd2a1186-0abf-41ab-8d25-e3cff5c09b6e"]},{"text":"the employee id \"Employee.employee_id\" is stored as a global variable to be used for other calls","id":"33457c1c-af9b-4be7-b107-fb0d09e3b14c","astNodeIds":["8e2eef06-8478-41d2-82f1-0f685409d4e8"]}],"tags":[{"name":"@WorkFlow1","astNodeId":"0fef4ce5-ebc8-44a1-adaa-b8f5e397fe75"}],"astNodeIds":["7e69072f-a21f-43fd-9cf1-c68e762d1cca"]}},{"pickle":{"id":"38c6c619-5074-4711-b735-2b8e5c0a254c","uri":"file:///C:/Users/sohel.abbasi/IdeaProjects/new/CucumberFrameworkBatch11/src/test/resources/features/APIWorkFlow.feature","name":"Retrieving recently created employee","language":"en","steps":[{"text":"a JWT bearer token is generated","id":"b82bd7db-a905-43ed-9adf-5941a17d018f","astNodeIds":["bd72a15c-2cea-4852-956a-ff66a5cd0941"]},{"text":"a request is prepared to get the created employee using api call","id":"be4fa04f-ec42-4aeb-8bb5-8515025f4261","astNodeIds":["c49077ee-f1bf-4bab-8b29-a6f597807ee7"]},{"text":"a GET call is made to retrieve the created employee","id":"a56019bc-e4f0-42d8-833d-932cfcd62880","astNodeIds":["67dfc663-392a-48ee-859d-005edd8d0011"]},{"text":"the status code for this employee is 200","id":"5d0b1cbe-58e6-4d85-9aca-0fd6684e5feb","astNodeIds":["ddb2bfa0-d6a6-4342-b76b-0f6331b21c6f"]},{"text":"the employee data we get having ID \"employee.employee_id\" must match with the globally stored employee id","id":"baa9973a-8526-4da1-9d86-85c468510559","astNodeIds":["adb5486c-c818-4f4c-b5ae-80c391f7ec40"]},{"text":"the retrieved data at \"employee\" object matches the data used to create an employee with employee id \"employee.employee_id\"","argument":{"dataTable":{"rows":[{"cells":[{"value":"emp_firstname"},{"value":"emp_lastname"},{"value":"emp_middle_name"},{"value":"emp_gender"},{"value":"emp_birthday"},{"value":"emp_status"},{"value":"emp_job_title"}]},{"cells":[{"value":"Aymat"},{"value":"tata"},{"value":"MS"},{"value":"Male"},{"value":"1988-02-28"},{"value":"Employee"},{"value":"QA"}]}]}},"id":"72fae70b-a02c-49df-9e6b-dad03e2de4cb","astNodeIds":["ec0a6f65-f72e-4c4c-8e53-75ec4a9f6cba"]}],"tags":[{"name":"@WorkFlow1","astNodeId":"ce6d668e-84ac-475d-baee-f6a85d0dada4"}],"astNodeIds":["dd7ff3d8-7149-4287-ab57-51756c0f99dc"]}},{"pickle":{"id":"7f150142-0b18-43ca-9ac4-511f279cd9c4","uri":"file:///C:/Users/sohel.abbasi/IdeaProjects/new/CucumberFrameworkBatch11/src/test/resources/features/APIWorkFlow.feature","name":"create an employee via API work flow using json","language":"en","steps":[{"text":"a JWT bearer token is generated","id":"f832256d-7b91-4f63-884b-57da9403eac6","astNodeIds":["bd72a15c-2cea-4852-956a-ff66a5cd0941"]},{"text":"a request is prepared for creating an employee via json payload","id":"6021c56d-7936-4b95-a713-c4fc7e782373","astNodeIds":["8711efdf-96e8-41c6-a2ab-ab7e0c7a991b"]},{"text":"a POST call is made to create an employee","id":"abf83601-ab3e-411c-b65f-51abfb8ccbc1","astNodeIds":["584ae429-554e-4b39-806a-967b29e52d81"]},{"text":"the status code for creating an employee is 201","id":"52859b3c-6342-419d-b2e5-3b010fca9811","astNodeIds":["e7dfe3e4-e824-45a7-a530-dc8c544d0ba4"]},{"text":"the employee created contains key \"Message\" and value \"Employee Created\"","id":"678388ce-ea95-49b4-89d8-d7aca58f9919","astNodeIds":["56a4859f-b945-459a-a29d-e78e5bf4cf83"]},{"text":"the employee id \"Employee.employee_id\" is stored as a global variable to be used for other calls","id":"c946b890-7e48-4c5c-a35c-e5bdf058d33f","astNodeIds":["8c75e0c0-af9b-410f-b32a-c0885bbbe1e5"]}],"tags":[{"name":"@JsonWorkflow","astNodeId":"dc8f19e7-3f2e-451e-affa-9bc1465c69a2"}],"astNodeIds":["900530de-ff0b-4a40-89a7-fe3ca049bbb3"]}},{"pickle":{"id":"19b78a90-c109-4d73-a107-abd56649a811","uri":"file:///C:/Users/sohel.abbasi/IdeaProjects/new/CucumberFrameworkBatch11/src/test/resources/features/APIWorkFlow.feature","name":"Create highly dynamic scenario","language":"en","steps":[{"text":"a JWT bearer token is generated","id":"10b71a18-de8e-46ad-aa16-cab31be24b94","astNodeIds":["bd72a15c-2cea-4852-956a-ff66a5cd0941"]},{"text":"a request is prepared for creating an employee with dynamic data \"Denis\", \"sergey\", \"mike\", \"M\", \"2018-12-12\", \"Employee\", \"QA\"","id":"fae9400f-8069-412b-aefb-66332533f736","astNodeIds":["a0a60634-aa61-4daa-b1b6-3051fa8a7325"]},{"text":"a POST call is made to create an employee","id":"eb6415cc-3f1c-4327-920a-d6ab6b9a27b7","astNodeIds":["3a636c0f-9b8b-4bcf-a067-08cafc39ea89"]},{"text":"the status code for creating an employee is 201","id":"baf37e79-8cd7-4ba6-b864-1401d2015ad7","astNodeIds":["0dd99c2f-9bb2-4fb7-84f0-67e77ff1666a"]},{"text":"the employee created contains key \"Message\" and value \"Employee Created\"","id":"930422ea-9e98-44f7-8cf6-30ec2bd7cafd","astNodeIds":["1638aeed-0749-4c1c-9e65-db85823af730"]},{"text":"the employee id \"Employee.employee_id\" is stored as a global variable to be used for other calls","id":"0f0a4041-a01a-4e3d-94dc-492d7558fd65","astNodeIds":["9c7dd47b-f135-44a5-98d4-87f273fa92bf"]}],"tags":[{"name":"@Dyanmic","astNodeId":"3bc6b544-ce9e-4701-867a-5e4c89cbac84"}],"astNodeIds":["116cb9ee-40b2-417c-80b5-fa5a865b2707"]}},{"pickle":{"id":"a7822ac2-e4cf-43e2-bd53-5a2361b6705a","uri":"file:///C:/Users/sohel.abbasi/IdeaProjects/new/CucumberFrameworkBatch11/src/test/resources/features/APIWorkFlow.feature","name":"Updating the employee using API call","language":"en","steps":[{"text":"a JWT bearer token is generated","id":"e81b16e7-4186-4a95-9d2d-6ec02abf29c9","astNodeIds":["bd72a15c-2cea-4852-956a-ff66a5cd0941"]},{"text":"a request is prepared for updating the existing employee details","id":"d1f831d6-8adc-4740-8c78-e5aaa505faef","astNodeIds":["628ba938-68d6-41af-8a9f-7f635dd6b2d4"]},{"text":"a PUT call is made to update the employee","id":"0446c313-994c-4edf-8baa-46b0e816b30a","astNodeIds":["e83c40ef-7a46-4564-83de-03bdb32591e8"]},{"text":"the status code for creating an employee should be 200","id":"791257bb-5e88-4cf8-bd45-927b151bd0a4","astNodeIds":["10fe0162-6e00-47bc-b386-03bd6f1621a0"]}],"tags":[{"name":"@update","astNodeId":"4d97ede7-2fef-4df3-9911-daf94b92d03c"}],"astNodeIds":["5bcd1f73-eecc-43d9-8cae-88f61000cede"]}},{"testCase":{"id":"a3c6a71e-c89a-49fa-9124-b789f99ecb04","pickleId":"d80ff784-30e2-44cc-a8a5-cfc4eb21d4ea","testSteps":[{"id":"a7733335-29e1-4cf6-ade4-ffdc4d4464d9","pickleStepId":"820d5356-805a-4e0f-8a19-de0ce07f1fa3","stepDefinitionIds":["71b3cb0f-e91b-4b39-8867-0a3a1b899b15"],"stepMatchArgumentsLists":[{}]},{"id":"086067b8-e0f2-4
